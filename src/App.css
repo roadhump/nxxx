@@ -1,9 +1,11 @@
 
 :root {
-  --red: #d46b6b;
+  --red: #f44336;
   --grey-light: #bdbdbd;
-  --grey-dark: #4b4f52;
-  --text: #8a9299;
+  --grey: #878687;
+  --grey-dark: #4b4b4b;
+  --text: #4b4b4b;
+  --blue-light: #79adf3;
 }
 
 @custom-media --large only screen and (width >= 992px);
@@ -26,7 +28,7 @@ body * {
   min-height: 100vh;
 
   @media (--large) {
-    background-image: linear-gradient(180deg,#3272cf 0,#589dc7 50%,#8ab7cb);
+    background-image: linear-gradient(180deg, #3272cf 0, #589dc7 50%, #8ab7cb);
     background-color: #8ab7cb;
     background-repeat: no-repeat;
   }
@@ -57,6 +59,7 @@ body * {
 .title {
   font-weight: 100;
   text-align: center;
+  margin: 20px 0;
 }
 
 .toolbar {
@@ -73,7 +76,6 @@ body * {
 
 label {
   display: block;
-  /* font-size: 20px; */
   padding-bottom: 8px;
   font-weight: 100;
 }
@@ -82,15 +84,22 @@ input[type="text"],
 input[type="password"] {
   width: 100%;
   font-size: 100%;
-  padding: 8px;
-  color: var(--text);
+  padding: 12px;
+  color: var(--grey-dark);
   border-radius: 4px;
   border: 1px solid;
   border-color: var(--grey-light);
+  outline: 0;
 }
 
 input:focus {
   color: var(--grey-dark);
+  border-color: var(--blue-light);
+  box-shadow: 0px 0px 1px 1px var(--blue-light);
+}
+
+input::placeholder {
+  color: var(--grey-light);
 }
 
 .labelErrors {
@@ -101,11 +110,14 @@ input:focus {
   border-color: var(--red);
 }
 
+.inputErrors:focus {
+    box-shadow: 0px 0px 1px 1px var(--red);
+}
+
 .errors {
   font-size: 12px;
   color: var(--red);
   margin-top: 4px;
-  font-weight: bold;
 }
 
 .submit {
@@ -115,23 +127,29 @@ input:focus {
   background: none;
   border-radius: 8px;
   padding: 12px;
-  background-color: #5286d4;
+  background-color: #60bdfb;
   color: #fff;
   margin-top: 28px;
   cursor: pointer;
+  position: relative;
+  outline: 0;
+  border: 0;
+  min-height: 44px;
 }
 
-.submit:hover {
-  background-color: #3272cf;
+.submit:hover, .submit:focus {
+  background-color: #46aef3;
+  box-shadow: 0px 0px 1px 1px var(--grey-light);
 }
 
 .separator {
   text-align: center;
+  margin-bottom: 16px;
 }
 
 .separatorBorder {
   position: relative;
-  top: 10px;
+  top: 12px;
   height: 2px;
   background: var(--grey-light);
 }
@@ -145,14 +163,26 @@ input:focus {
 .buttonHolder {
   display: flex;
   justify-content: center;
-  padding: 16px 0;
+  margin-bottom: 16px;
 }
 
 .globalError {
   background: var(--red);
-  /* border: 1px solid var(--red); */
-  padding: 8px;
-  /* color: var(--red); */
+  padding: 16px;
   color: #fff;
   margin-bottom: 16px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
+}
+
+.globalErrorIcon {
+  font-size: 14px;
+}
+
+.complete {
+  display: flex;
+  justify-content: center;
+}
+
+.completeLine {
+  display: flex;
 }

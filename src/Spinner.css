@@ -1,0 +1,16 @@
+@keyframes spinner{
+    to {
+        transform:rotate(1turn)
+    }
+}
+
+.block {
+    /* width: 500px; */
+    /* height: 500px; */
+    /* background-color: red; */
+/* background-image: url(data:image/svg+xml;base64,PHN2ZyBiYXNlUHJvZmlsZT0idGlueSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNTgiIHZpZXdCb3g9IjI4IC0yMiA2NCA1OCI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTg2LjMgMTAuMkw4MSA1LjlWMzZoLTlWMTguNWMwLTYuNi01LjQtMTItMTItMTJzLTEyIDUuNC0xMiAxMlYzNmgtOVY1LjhsLTUuNCA0LjRMMjggMy45IDYwLTIybDE0IDExLjN2LTMuOGg3Vi01bDExIDguOS01LjcgNi4zek02MCAxMS41YzMuNyAwIDYuNyAyLjkgNyA2LjV2MThINTNWMThjLjMtMy42IDMuMy02LjUgNy02LjV6Ii8+PC9zdmc+); */
+    /* background-repeat: no-repeat */
+    animation: spinner .66s linear Infinite;
+    /* background-size: contain; */
+    /* animation-duration: 500ms; */
+}
