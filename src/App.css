@@ -1,0 +1,158 @@
+
+:root {
+  --red: #d46b6b;
+  --grey-light: #bdbdbd;
+  --grey-dark: #4b4f52;
+  --text: #8a9299;
+}
+
+@custom-media --large only screen and (width >= 992px);
+
+body {
+
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+body * {
+  box-sizing: inherit;
+}
+
+.block {
+  min-height: 100vh;
+
+  @media (--large) {
+    background-image: linear-gradient(180deg,#3272cf 0,#589dc7 50%,#8ab7cb);
+    background-color: #8ab7cb;
+    background-repeat: no-repeat;
+  }
+}
+
+.inner {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  @media (--large) {
+    min-height: calc(100vh - 80px);
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+}
+
+
+.form {
+  max-width: 400px;
+  width: 100%;
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.title {
+  font-weight: 100;
+  text-align: center;
+}
+
+.toolbar {
+  height: 80px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  /* font-size: 20px; */
+  padding-bottom: 8px;
+  font-weight: 100;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  font-size: 100%;
+  padding: 8px;
+  color: var(--text);
+  border-radius: 4px;
+  border: 1px solid;
+  border-color: var(--grey-light);
+}
+
+input:focus {
+  color: var(--grey-dark);
+}
+
+.labelErrors {
+  color: var(--red);
+}
+
+.inputErrors.inputErrors {
+  border-color: var(--red);
+}
+
+.errors {
+  font-size: 12px;
+  color: var(--red);
+  margin-top: 4px;
+  font-weight: bold;
+}
+
+.submit {
+  display: block;
+  width: 100%;
+  font-size: 100%;
+  background: none;
+  border-radius: 8px;
+  padding: 12px;
+  background-color: #5286d4;
+  color: #fff;
+  margin-top: 28px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #3272cf;
+}
+
+.separator {
+  text-align: center;
+}
+
+.separatorBorder {
+  position: relative;
+  top: 10px;
+  height: 2px;
+  background: var(--grey-light);
+}
+
+.separatorLabel {
+  background: #fff;
+  padding: 4px;
+  position: relative;
+}
+
+.buttonHolder {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.globalError {
+  background: var(--red);
+  /* border: 1px solid var(--red); */
+  padding: 8px;
+  /* color: var(--red); */
+  color: #fff;
+  margin-bottom: 16px;
+}
